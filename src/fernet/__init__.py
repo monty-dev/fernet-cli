@@ -43,13 +43,13 @@ def usage():
 
 
 def run():
-    if len(sys.argv) >= 2 and (sys.argv[1] == "i" or sys.argv[1] == "init"):
+    if len(sys.argv) >= 2 and sys.argv[1] in ["i", "init"]:
         init()
-    elif len(sys.argv) >= 2 and (sys.argv[1] == "g" or sys.argv[1] == "generate"):
+    elif len(sys.argv) >= 2 and sys.argv[1] in ["g", "generate"]:
         print(generate_key())
-    elif len(sys.argv) >= 3 and (sys.argv[1] == "e" or sys.argv[1] == "encrypt"):
+    elif len(sys.argv) >= 3 and sys.argv[1] in ["e", "encrypt"]:
         print(encrypt(sys.argv[2]))
-    elif len(sys.argv) >= 3 and (sys.argv[1] == "d" or sys.argv[1] == "decrypt"):
+    elif len(sys.argv) >= 3 and sys.argv[1] in ["d", "decrypt"]:
         print(decrypt(sys.argv[2]))
     else:
         usage()
