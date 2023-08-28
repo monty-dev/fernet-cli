@@ -1,14 +1,32 @@
-[build-system]
-requires = [
-    "setuptools>=42",
-    "wheel"
-]
-build-backend = "setuptools.build_meta"
+[tool.poetry]
+authors     = ["Montel Edwards <m@monteledwards.com>", 'Getaround SAS']
+description = "A CLI to manage Fernet encrypted env variables"
+name        = "fernet-cli"
+readme      = "README.md"
+version     = "1.0"
 
+[tool.poetry.dependencies]
+fire   = "^0.5.0"
+python = "^3.8"
+
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires      = ["poetry-core"]
+
+[tool.poetry.scripts]
+
+fernet = "fernet_cli:main"
 
 [tool.black]
-line-length = 120
+line-length    = 160
+target-version = ["py311"]
 
-[tool.pylint.Master]
-max-line-length = 120
-disable = "W0105,C0114,C0115,C0116,R1732"
+[tool.ruff]
+unfixable = ["B", "SIM", "TRY", "RUF", "D203", "UP", "RET", "TCH"]
+
+fix-only                   = true
+ignore                     = ["E501", "D211", "D212", "TID"]
+ignore-init-module-imports = true
+line-length                = 160
+target-version             = "py311"
