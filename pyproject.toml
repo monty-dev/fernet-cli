@@ -6,8 +6,8 @@ readme      = "README.md"
 version     = "1.0"
 
 [tool.poetry.dependencies]
-fire   = "^0.5.0"
-python = "^3.8"
+fire   = ">=0.5.0"
+python = ">=3.8"
 
 
 [build-system]
